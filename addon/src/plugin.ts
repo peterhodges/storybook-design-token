@@ -14,7 +14,7 @@ function getTokenFilePaths(context: any, designTokenGlob?: string): string[] {
       designTokenGlob ||
         process.env.DESIGN_TOKEN_GLOB ||
         '**/*.{css,scss,less,svg,png,jpeg,gif}'
-    ),
+        .replace(/\\/g,'/')),
     {
       ignore: ['**/node_modules/**', '**/storybook-static/**', '**/*.chunk.*']
     }
